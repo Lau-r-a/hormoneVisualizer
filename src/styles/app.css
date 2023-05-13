@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	@font-face {
+		font-family: 'Courrier Prime';
+		src: local('Courier Prime'), local('Courier-Prime'), local('courier prime'), local('courier-prime'),
+			url('/fonts/Courier-Prime.ttf');
+		font-weight: normal;
+		font-display: swap;
+	}
+}
+
+.font-hero {
+    font-size: 120px;
+}
