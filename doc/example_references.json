@@ -1,0 +1,6 @@
+{
+    "estradiol" : { "unit": "pg/ml", "reference": [100, 200]},
+    "testosteron" : { "unit": "ng/dl", "reference": [0.15, 0.6]},
+    "prolaktin" : { "unit": "ng/ml", "reference": [4.0, 15.2]}
+}
+

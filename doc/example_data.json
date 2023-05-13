@@ -1,0 +1,21 @@
+{
+    "results": [
+        {
+            "date": "01.01.2023",
+            "values": [
+                {
+                    "name": "estradiol",
+                    "value": 120
+                },
+                {
+                    "name": "testosteron",
+                    "value": 0.1
+                },
+                {
+                    "name": "prolaktin",
+                    "value": 30
+                }
+            ]
+        }
+    ]
+}
