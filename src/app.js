@@ -1,6 +1,8 @@
 import { Chart, registerables } from "chart.js";
 import annotationPlugin from 'chartjs-plugin-annotation';
 import 'chartjs-adapter-moment';
+import moment from 'moment';
+
 import hormoneData from "../doc/example_data.json";
 import hormoneReferences from "../doc/example_references.json";
 
@@ -48,29 +50,47 @@ function generateOptions (min, max) {
   return options;
 }
 
+function constructDataset(json, value) {
+  const result = json.results.map((item) => {
+    return {
+      x: moment(item.date, 'DD.MM.YYYY'),
+      y: item[value]
+    }
+  });
+  return result;
+}
+
+function generateChart(value, jsonData, jsonReference) {
+
+  const min = jsonReference[value].reference[0];
+  const max = jsonReference[value].reference[1];
 
 
+  const config = {
+    type: 'line',
+    data: {
+      datasets: [{
+        label: value,
+        data: constructDataset(jsonData, value),
+        fill: false,
+        borderColor: 'rgb(75, 192, 192)',
+        tension: 0.1
+      }]
+    },
+    options: generateOptions(min, max)
+  };
 
-const config = {
-  type: 'line',
-  data: {
-    datasets: [{
-      label: 'My First Dataset',
-      data: [{x:'2016-12-25', y:20}, {x:'2016-12-26', y:10}],
-      fill: false,
-      borderColor: 'rgb(75, 192, 192)',
-      tension: 0.1
-    }]
-  },
-  options: generateOptions(50, 80)
-};
+  return config;
+}
+
+
 
 new Chart(
-  document.getElementById('myChart'),
-  config
+  document.getElementById('estradiol'),
+  generateChart('estradiol', hormoneData, hormoneReferences)
 );
 
-//dataset min
-//dataset max
-//dataset data
-
+new Chart(
+  document.getElementById('testosteron'),
+  generateChart('testosteron', hormoneData, hormoneReferences)
+);

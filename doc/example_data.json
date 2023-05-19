@@ -2,20 +2,33 @@
     "results": [
         {
             "date": "01.01.2023",
-            "values": [
-                {
-                    "name": "estradiol",
-                    "value": 120
-                },
-                {
-                    "name": "testosteron",
-                    "value": 0.1
-                },
-                {
-                    "name": "prolaktin",
-                    "value": 30
-                }
-            ]
+            "estradiol": 30,
+            "testosteron": 0.1,
+            "prolaktin": 30
+        },
+        {
+            "date": "01.03.2023",
+            "estradiol": 150,
+            "testosteron": 0.1,
+            "prolaktin": 30
+        },
+        {
+            "date": "01.04.2023",
+            "estradiol": 140,
+            "testosteron": 0.1,
+            "prolaktin": 30
+        },
+        {
+            "date": "01.07.2023",
+            "estradiol": 160,
+            "testosteron": 0.1,
+            "prolaktin": 30
+        },
+        {
+            "date": "01.09.2023",
+            "estradiol": 150,
+            "testosteron": 0.1,
+            "prolaktin": 30
         }
     ]
 }

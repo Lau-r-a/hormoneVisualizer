@@ -1,4 +1,11 @@
-h1 {
-    color: hotpink;
-    font-family: cursive;
-  }
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 40vh;
+}
+
+.canvas-item {
+  width: 45vw;
+  margin: auto;
+}
