@@ -84,13 +84,26 @@ function generateChart(value, jsonData, jsonReference) {
 }
 
 
+let itemList = [];
 
-new Chart(
-  document.getElementById('estradiol'),
-  generateChart('estradiol', hormoneData, hormoneReferences)
-);
+for (const entry of hormoneData.results) {
+  for (const [key, value] of Object.entries(entry)) {
+    if (key !== 'date' && itemList.find(item => item === key) === undefined) {
+      itemList.push(key);
+    }
+  }
+}
 
-new Chart(
-  document.getElementById('testosteron'),
-  generateChart('testosteron', hormoneData, hormoneReferences)
-);
+for (const item of itemList) {
+  const element = document.createElement('div');
+  const canvas = document.createElement('canvas');
+
+  canvas.id = item;
+  element.appendChild(canvas);
+
+  document.getElementById('canvas-container').appendChild(element);
+
+  new Chart(
+    canvas,
+    generateChart(item, hormoneData, hormoneReferences));
+}
