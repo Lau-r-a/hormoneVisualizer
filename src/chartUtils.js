@@ -1,4 +1,11 @@
 import moment from "moment";
+import { Chart, registerables } from "chart.js";
+import annotationPlugin from "chartjs-plugin-annotation";
+import "chartjs-adapter-moment";
+
+
+Chart.register(...registerables);
+Chart.register(annotationPlugin);
 
 function generateOptions(min, max) {
   const options = {
@@ -89,4 +96,21 @@ function generateHormonesList(jsonData) {
   return hormoneList;
 }
 
-export { generateChartConfig, generateHormonesList };
+function drawCharts (container, hormoneData, hormoneReferences) {
+  const hormoneList = generateHormonesList(hormoneData);
+
+  for (const item of hormoneList) {
+    const element = document.createElement("div");
+    const canvas = document.createElement("canvas");
+
+    canvas.id = item;
+    element.classList.add("canvas-item");
+    element.appendChild(canvas);
+
+    document.getElementById(container).appendChild(element);
+
+    new Chart(canvas, generateChartConfig(item, hormoneData, hormoneReferences));
+  }
+}
+
+export { drawCharts };

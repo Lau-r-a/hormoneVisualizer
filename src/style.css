@@ -1,11 +1,19 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  color: #2f2f2f;
+  font-family: sans-serif;
+}
+
 .container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  height: 40vh;
 }
 
 .canvas-item {
   width: 45vw;
+  height: 35vh;
   margin: auto;
 }
