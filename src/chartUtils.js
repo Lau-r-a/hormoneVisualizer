@@ -31,7 +31,10 @@ function generateOptions(min, max) {
     },
     scales: {
       x: {
-        type: "timeseries",
+        type: "time",
+        ticks: {
+          source: "data",
+        },
         time: {
           round: "day",
           unit: "day",
@@ -104,7 +107,8 @@ function drawCharts (container, hormoneData, hormoneReferences) {
     const canvas = document.createElement("canvas");
 
     canvas.id = item;
-    element.classList.add("canvas-item");
+    element.classList.add("div-item");
+    canvas.classList.add("canvas-item");
     element.appendChild(canvas);
 
     document.getElementById(container).appendChild(element);
