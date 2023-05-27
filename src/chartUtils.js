@@ -82,10 +82,10 @@ function generateChartConfig(value, jsonData, jsonReference) {
   return config;
 }
 
-function generateHormonesList(jsonData) {
+function generateHormonesList(hormoneData) {
   let hormoneList = [];
 
-  for (const entry of jsonData.results) {
+  for (const entry of hormoneData.results) {
     for (const [key, value] of Object.entries(entry)) {
       if (
         key !== "date" &&
@@ -97,6 +97,12 @@ function generateHormonesList(jsonData) {
   }
 
   return hormoneList;
+}
+
+function drawChart(containerId, hormoneData, hormoneReferences, value) {
+  const canvas = document.createElement("canvas");
+  document.getElementById(containerId).appendChild(canvas);
+  new Chart(canvas, generateChartConfig(value, hormoneData, hormoneReferences));
 }
 
 function drawCharts (container, hormoneData, hormoneReferences) {
@@ -117,4 +123,4 @@ function drawCharts (container, hormoneData, hormoneReferences) {
   }
 }
 
-export { drawCharts };
+export { drawCharts, drawChart, generateHormonesList };
