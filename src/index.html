@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>My First Parcel App</title>
+    <title>Hormone Visualizer</title>
     <link rel="stylesheet" href="style.css" />
     <script type="module" src="app.js"></script>
   </head>
@@ -10,8 +10,26 @@
     <div class="wrapper">
       <h2>Hormone Visualizer</h2>
       <div id="app">
-        <div id="canvas-container" class="container">
-          <!-- automatically generated charts -->
+        <div class="tabs">
+          <div class="tab">
+            <input type="radio" name="css-tabs" id="tab-1" checked class="tab-switch">
+            <label for="tab-1" class="tab-label">Overview</label>
+            <div class="tab-content">
+              <div id="canvas-container" class="container">
+                <!-- automatically generated charts -->
+              </div>
+            </div>
+          </div>
+          <div class="tab">
+            <input type="radio" name="css-tabs" id="tab-2" class="tab-switch">
+            <label for="tab-2" class="tab-label">Details</label>
+            <div class="tab-content">TODO</div>
+          </div>
+          <div class="tab">
+            <input type="radio" name="css-tabs" id="tab-3" class="tab-switch">
+            <label for="tab-3" class="tab-label">Tab Three</label>
+            <div class="tab-content">TODO</div>
+          </div>
         </div>
       </div>
     </div>
