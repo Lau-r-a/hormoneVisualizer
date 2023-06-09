@@ -36,7 +36,8 @@ body {
 /*tabs*/
 .tabs {
   margin: 3rem 0;
-  background: #1abc9c;
+  background: #8c6790;
+  border-radius: 5px;
 }
 .tabs::before,
 .tabs::after {
@@ -53,13 +54,14 @@ body {
   display: none;
 }
 .tab-label {
+  border-radius: 5px;
   position: relative;
   display: block;
   line-height: 2.75em;
   height: 3em;
   padding: 0 1.618em;
-  background: #1abc9c;
-  border-right: 0.125rem solid #16a085;
+  background: #8c6790;
+  border-right: 0.125rem solid #8c6790;
   color: #fff;
   cursor: pointer;
   top: 0;
@@ -76,9 +78,6 @@ body {
   position: absolute;
   z-index: 1;
   left: 0;
-  background: #fff;
-  color: #2c3e50;
-  border-bottom: 0.25rem solid #bdc3c7;
   opacity: 0;
   transition: all 0.35s;
 }
